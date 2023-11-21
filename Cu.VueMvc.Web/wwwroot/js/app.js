@@ -28,9 +28,9 @@
             this.categoriesVisible = true;
             this.loading = false;
         },
-        showProducts: async function (categoryId = null) {
+        showProducts: async function (categoryId) {
             let url = `${this.baseUrl}/products`;
-            if (categoryId !== null) {
+            if (categoryId !== undefined) {
                 url += `/category/${categoryId}`;
             }
             

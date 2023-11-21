@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cu.ApiBAsics.Lesvoorbeeld.A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cu.ApiBasics.Lesvoorbeeld.Avond.Infrastructure", "cu.ApiBasics.Lesvoorbeeld.Avond.Infrastructure\cu.ApiBasics.Lesvoorbeeld.Avond.Infrastructure.csproj", "{2FEA7906-778B-4BD9-9CFA-997ED4FB2B24}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cu.VueMvc.Web", "Cu.VueMvc.Web\Cu.VueMvc.Web.csproj", "{18D18D08-8442-4064-B095-09B2CEEC2B5D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{2FEA7906-778B-4BD9-9CFA-997ED4FB2B24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FEA7906-778B-4BD9-9CFA-997ED4FB2B24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FEA7906-778B-4BD9-9CFA-997ED4FB2B24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18D18D08-8442-4064-B095-09B2CEEC2B5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18D18D08-8442-4064-B095-09B2CEEC2B5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18D18D08-8442-4064-B095-09B2CEEC2B5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18D18D08-8442-4064-B095-09B2CEEC2B5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

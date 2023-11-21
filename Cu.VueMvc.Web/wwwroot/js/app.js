@@ -6,6 +6,7 @@
         productsVisible: false,
         baseUrl: "https://localhost:44326/api",
         categories: [],
+        products: [],
         hasError: false,
         errorMessage: "",
     },
@@ -24,10 +25,19 @@
                     this.hasError = true;
                 });
         },
-        showProducts: function () {
+        showProducts: async function () {
             this.categoriesVisible = false;
             this.productsVisible = true;
             //get the products from the api
+            this.products = await axios.get(`${this.baseUrl}/products`)
+                .then(response => response.data)
+                .catch(error => {
+                    if (error.response.status == 404) {
+                        this.errorMessage = "endpoint not found!";
+                    }
+                    this.hasError = true;
+                })
+            console.log(this.products);
         },
     },
 });

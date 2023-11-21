@@ -6,6 +6,7 @@
         productsVisible: false,
         baseUrl: "https://localhost:44326/api",
         categories: [],
+        loading: false,
         products: [],
         hasError: false,
         errorMessage: "",
@@ -14,7 +15,7 @@
         showCategories: async function () {
             this.hasError = false;
             this.productsVisible = false;
-            this.categoriesVisible = true;
+            this.loading = true;
             //get the categories from the api
             this.categories = await axios.get(`${this.baseUrl}/categories`)
                 .then(response => response.data.items)
@@ -24,12 +25,20 @@
                     }
                     this.hasError = true;
                 });
+            this.categoriesVisible = true;
+            this.loading = false;
         },
-        showProducts: async function () {
+        showProducts: async function (categoryId = null) {
+            let url = `${this.baseUrl}/products`;
+            if (categoryId !== null) {
+                url += `/category/${categoryId}`;
+            }
+            
+            this.hasError = false;
             this.categoriesVisible = false;
-            this.productsVisible = true;
+            this.loading = true;
             //get the products from the api
-            this.products = await axios.get(`${this.baseUrl}/products`)
+            this.products = await axios.get(url)
                 .then(response => response.data)
                 .catch(error => {
                     if (error.response.status == 404) {
@@ -37,7 +46,10 @@
                     }
                     this.hasError = true;
                 })
-            console.log(this.products);
+                .finally(() => {
+                    this.productsVisible = true;
+                    this.loading = false;
+                });
         },
     },
 });

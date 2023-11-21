@@ -4,7 +4,13 @@
         <div class="col col-lg-2 mx-auto">
             @* two buttons *@
             <button v-on:click="showCategories" class="btn btn-outline-info">Categories</button>
-            <button v-on:click="showProducts" class="btn btn-outline-info">Products</button>
+            <button v-on:click="showProducts(null)" class="btn btn-outline-info">Products</button>
+        </div>
+    </div>
+    @* loading spinner *@
+    <div v-if="loading" class="d-flex justify-content-center">
+        <div class="spinner-border" role="status">
+            <span class="sr-only"></span>
         </div>
     </div>
     @* error div *@
@@ -20,7 +26,7 @@
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">{{category.name}}</h5>
-                    <a href="#" class="btn btn-primary">Show products</a>
+                    <button v-on:click="showProducts(category.id)" class="btn btn-primary">Show products</button>
                 </div>
             </div>
         </div>

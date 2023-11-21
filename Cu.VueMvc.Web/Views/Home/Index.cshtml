@@ -28,6 +28,23 @@
     <div v-if="productsVisible" class="row">
         @* show products *@
         <h5>Products</h5>
+        <div class="row">
+            <div v-for="product in products" class="col col-lg-4 mb-2 text-center">
+                <div class="card" style="width: 18rem;">
+                    <!--tips: add .text-center,.text-right to the .card to change card text alignment-->
+                    <img v-bind:src="product.image" class="card-img-top p-2 img-fluid" v-bind:alt="product.name">
+                    <div class="card-body">
+                        <h5 class="card-title">{{product.name}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{product.category}}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">&euro; {{product.price}}</h6>
+                        <span v-for="property in product.properties" class="card-text">{{property}} </span>
+                        <div class="card-footer text-center">
+                            <a href="#" class="btn btn-primary">Info</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     @* end of vue app *@
 </div>

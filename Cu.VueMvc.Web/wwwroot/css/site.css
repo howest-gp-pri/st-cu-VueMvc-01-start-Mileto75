@@ -16,3 +16,9 @@ html {
 body {
   margin-bottom: 60px;
 }
+/*overwrite boostrap css*/
+.card-img-top {
+    width: 100% !important;
+    height: 15vw !important;
+    object-fit:contain !important;
+}

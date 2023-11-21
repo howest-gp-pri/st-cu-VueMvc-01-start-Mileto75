@@ -1,6 +1,30 @@
 ﻿
 <div id="app">
-    <h5>{{pageTitle}}</h5>
+    <div class="row">
+        <div class="col col-lg-2 mx-auto">
+            @* two buttons *@
+            <button v-on:click="showCategories" class="btn btn-outline-info">Categories</button>
+            <button v-on:click="showProducts" class="btn btn-outline-info">Products</button>
+        </div>
+    </div>
+    @* error div *@
+    <div v-if="hasError" class="row">
+        <div class="col col-lg-6 mx-auto">
+            <div class="alert alert-danger">{{errorMessage}}</div>
+        </div>
+    </div>
+    <div v-if="categoriesVisible" class="row">
+        @* show categories *@
+        <h5>Categories</h5>
+        <div v-for="category in categories" class="col col-lg-3 border border-1 rounded rounded-2">
+            {{category.name}}
+        </div>
+    </div>
+    <div v-if="productsVisible" class="row">
+        @* show products *@
+        <h5>Products</h5>
+    </div>
+    @* end of vue app *@
 </div>
 
 
